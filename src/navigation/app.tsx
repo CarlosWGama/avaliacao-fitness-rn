@@ -3,6 +3,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { PerfilScreen } from '../screens/app/perfil';
 import { AppColor } from '../themes/app-colors';
 import { MaterialIcons } from '@expo/vector-icons';
+import { AlunosScreen } from '../screens/app/alunos';
 
 export type AppNavParams = {
     'alunos': undefined,
@@ -14,7 +15,7 @@ const Tab = createMaterialBottomTabNavigator<AppNavParams>();
 
 export const AppNavigation = () => (
     <Tab.Navigator barStyle={{backgroundColor:AppColor.primary}}>
-        <Tab.Screen name="alunos" component={PerfilScreen} options={{
+        <Tab.Screen name="alunos" component={AlunosScreen} options={{
             tabBarLabel: 'Alunos',
             tabBarIcon: (tab) => <MaterialIcons name="people" color={(tab.focused ? 'white' : '#CDC8B1')} size={(tab.focused ? 25 : 15)}/>
         }} />
